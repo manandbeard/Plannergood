@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Ovo';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/ovo/v17/yYLl0h7Wyfzjy4Q5_A.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --background: 0 0% 98%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --primary: 207 90% 54%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 60 4.8% 95.9%;
+  --secondary-foreground: 24 9.8% 10%;
+  --accent: 60 4.8% 95.9%;
+  --accent-foreground: 24 9.8% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 20 14.3% 4.1%;
+  --radius: 0.75rem;
+  
+  /* Custom colors */
+  --off-white: 0 0% 98%;
+  --off-white-darker: 0 0% 94%;
+  --text-gray: 0 0% 48%;
+  --divider-gray: 0 0% 85%;
+  --rich-black: 0 0% 7%;
+  --coral: 7 82% 80%;
+  --sage: 92 14% 72%;
+  --sky: 202 67% 78%;
+  --lavender: 266 23% 78%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: 'Ovo', serif;
+    @apply bg-[#F0F0F0] text-[#111111] antialiased overflow-x-hidden;
+  }
+
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-[#F0F0F0];
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-[#DADADA] rounded-full;
+  }
+
+  /* Animations */
+  .calendar-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .calendar-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  
+  .slideshow-fade {
+    transition: opacity 0.75s ease-in-out;
+  }
+  
+  .settings-modal {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+}
