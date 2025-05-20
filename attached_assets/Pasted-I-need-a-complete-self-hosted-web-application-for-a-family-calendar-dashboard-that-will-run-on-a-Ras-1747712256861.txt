@@ -1,0 +1,118 @@
+I need a complete self-hosted web application for a family calendar dashboard that will run on a Raspberry Pi 4 and display full-screen on a connected 27" monitor. The application should be similar to Skylight Calendar but locally hosted.
+Layout Structure
+Header
+
+Title "Helland Family Calendar" prominently displayed
+Current time display
+Weather information (current conditions)
+Settings button (small gear icon) in the corner
+
+Main Content (Two Rows)
+Row 1 - Weekday Cards:
+
+Five equal-width cards representing Monday through Friday
+Each card displays "MEAL" section at the top from the meals calendar feed
+Below the meal section, each card shows the day's events in chronological order
+
+Row 2 - Special Cards:
+
+Saturday and Sunday cards (weekend events) - approximately 40% of row width combined
+Photo Slideshow card - approximately 30% of row width
+Task Card (for family notes/tasks) - approximately 30% of row width
+
+Core Requirements
+1. Calendar System
+
+Create the weekly agenda-style calendar view following the layout specified above
+Support multiple iCal feeds (Google Calendar integration) with one feed per family member
+Each family member's events should be color-coded
+Display a separate "MEAL" section at the top of each day's card showing meals from a dedicated iCal feed
+Show events with time, title, and brief details in card format
+
+2. Photo Slideshow Feature
+
+Implement a dedicated card on Row 2 that cycles through family photos
+Use simple transitions (fade or slide) between photos
+Support a file upload interface for adding new photos to the library
+Store photos locally in a configurable directory on the Pi
+
+3. Screensaver Mode
+
+After a configurable period of inactivity (default: 10 minutes), enter a full-screen slideshow mode
+Use the same photo library as the slideshow card
+Exit screensaver and return to dashboard on any user interaction (mouse movement, touch, etc.)
+
+4. Settings Interface
+
+Include a small gear icon in the header to access settings
+Allow configuration of:
+
+iCal/Google Calendar links for each family member (add/remove/edit)
+Display preferences (12/24 hour format, theme color selection, etc.)
+Screensaver timeout duration
+Photo directory location
+Family member names and associated calendar colors
+
+
+
+5. Technical Specifications
+
+Create a responsive web interface optimized for a 27" display
+Include a simple backend to handle calendar syncing and settings storage
+Store configuration in a lightweight database or JSON file
+Make the application self-contained and easy to install on a Raspberry Pi
+Ensure the app runs on boot and recovers gracefully from network/power issues
+Implement a clean, modern UI with a focus on readability from a distance
+
+6. Installation & Deployment
+
+Provide clear setup instructions for Raspberry Pi deployment
+Include instructions for setting up auto-start on boot
+Document how to configure the Pi for optimal performance with this app
+
+UI/UX Design Requirements
+Font
+
+Use OVO as the primary font throughout the application
+Include proper font fallbacks for system stability
+
+Visual Style
+
+Design for a clean, minimal, and calming visual language with Scandinavian simplicity
+Optimize for unobtrusive presence in domestic spaces
+Focus on legibility, whitespace, and gentle contrast
+
+Color Palette
+
+Soft off-white backgrounds (#FAFAFA, #F0F0F0)
+Muted grays for text and dividers (#7A7A7A, #DADADA)
+Pastel accent colors for calendar categories:
+
+Soft coral
+Sage green
+Sky blue
+Dusty lavender
+
+
+Rich black (#111) for key contrast elements
+Semi-transparent overlays for modals and photo transitions
+
+Layout and Spacing
+
+Minimal margins and paddings for a clean modular layout
+Card-based sections with smooth transitions
+Rounded corners on cards and photos (border-radius: 12-16px)
+Minimal and soft drop shadows (box-shadow: 0 2px 10px rgba(0,0,0,0.05))
+
+Animation and Feel
+
+Slow, gentle transitions (e.g., slideshow fades over 0.75-1s)
+Subtle hover effects (background shifts or slight elevation)
+Fullscreen modes that feel like digital art frames — elegant and non-distracting
+
+CSS Framework
+
+Use a lightweight CSS framework or custom styles that match the Skylight aesthetic
+Ensure all UI elements follow the described style guidelines consistently
+
+Please generate a complete solution with frontend and backend code, database schema if needed, and deployment instructions specific to Raspberry Pi 4. The code should be well-commented and include error handling for robustness.
